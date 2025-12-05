@@ -1,0 +1,25 @@
+We're using this command for removing unwanted JavaScript endpoints: 
+
+
+alljs.txt is a file name
+
+1. sort -u "alljs.txt" > endpoints_sorted.txt
+
+2. grep -Eo 'https?://[^ ]+' endpoints_sorted.txt | \
+  grep -Ev '/(_next|static/chunks|\.js$|\.css$|\.png|\.svg|gtm.js$)' | \
+  sort -u > endpoints_nonstatic.txt
+
+3. grep -Ei '/api/|/auth|/mentors|/booking|/orders|/products|/users|/dashboard|/signin|/graphql|/upload|/timezone' endpoints_sorted.txt | sort -u > endpoints_candidates.txt
+
+
+4. sed -E 's#https?://[^/]+##' endpoints_candidates.txt | sort -u > endpoints_candidates_paths.txt
+
+
+Explanation for the above commands : 
+
+
+endpoints_nonstatic.txt — all non-static URLs
+
+endpoints_candidates.txt — prioritized candidate endpoints (API & functional)
+
+endpoints_candidates_paths.txt — path-only list for quick testing
