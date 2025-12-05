@@ -1,7 +1,7 @@
 1. Need to understand what are the techstack's are used in the website.
 
-Linux Command : whatweb 
-Wappalyzer Extension
+i) Linux Command : whatweb 
+ii) Wappalyzer Extension
 
 2. Katana Command for discover all endpoints ?
 
