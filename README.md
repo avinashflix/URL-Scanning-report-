@@ -7,4 +7,9 @@ ii) Wappalyzer Extension
 
 katana -u target.com  -d 5 -jc | grep '\.js$' | tee alljs.txt
 
+3. Using this command we can see the status code for all URLs
+
+katana -list endpoints.txt | httpx -status-code -o status_output.txt
+
+
 
