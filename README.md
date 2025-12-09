@@ -11,5 +11,6 @@ katana -u target.com  -d 5 -jc | grep '\.js$' | tee alljs.txt
 
 katana -list endpoints.txt | httpx -status-code -o status_output.txt
 
+4. Filter only 200 response code
 
-
+grep "\[200\]"  gau_status_output.txt > filtered_200.txt 
